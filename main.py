@@ -3,9 +3,9 @@ import time
 import os
 
 consumer_key=os.environ['consumer_key']
-consumer_secret=os.environ['consumer_key']
-key=os.environ['consumer_key']
-secret=os.environ['consumer_key']
+consumer_secret=os.environ['consumer_secret']
+key=os.environ['key']
+secret=os.environ['secret']
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(key, secret)
