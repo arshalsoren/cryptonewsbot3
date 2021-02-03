@@ -59,7 +59,7 @@ def reply():
 
 def searchBot():
     print("Searching hashtags...")
-    for tweet in tweepy.Cursor(api.search,q=('#BTC OR #Cryptocurrency OR #Bitcoin OR #Binance OR #Blockchain OR #BCH OR #ETH OR #LTC-filter:retweets'),lang="en").items(5):
+    for tweet in tweepy.Cursor(api.search,q=('#cryptonewsbot3 OR #BTC OR #Cryptocurrency OR #Bitcoin OR #Binance OR #Blockchain OR #BCH OR #ETH OR #LTC-filter:retweets'),lang="en").items(5):
         try:
             tweet.retweet()
             print("Retweeted!")
