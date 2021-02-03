@@ -45,16 +45,12 @@ def reply():
     for tweet in reversed(tweets):
         for tags in hashtags:
             if tags in tweet.full_text.lower():
-                try:
-                    print(str(tweet.id)+'-'+tweet.full_text)
-                    api.update_status('@'+tweet.user.screen_name+" A Crypto News Bot at work!",tweet.id)
-                    api.create_favorite(tweet.id)
-                    api.retweet(tweet.id)
-                    storeLastSeen(fileName,tweet.id)
-                    time.sleep(10)
-                except tweepy.TweepError as e:
-                    print(e.reason)
-                    time.sleep(9)
+                print(str(tweet.id)+'-'+tweet.full_text)
+                api.update_status('@'+tweet.user.screen_name+" A Crypto News Bot at work!",tweet.id)
+                api.create_favorite(tweet.id)
+                api.retweet(tweet.id)
+                storeLastSeen(fileName,tweet.id)
+                time.sleep(10)
 
 def searchBot():
     print("Searching hashtags...")
