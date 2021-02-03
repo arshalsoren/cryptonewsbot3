@@ -55,7 +55,6 @@ def reply():
                 except tweepy.TweepError as e:
                     print(e.reason)
                     time.sleep(9)
-                    continue
 
 def searchBot():
     print("Searching hashtags...")
