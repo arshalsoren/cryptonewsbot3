@@ -22,7 +22,7 @@ def followingFollowers():
                 print("Followed!")
             except tweepy.TweepError as err:
                 print(err.reason)
-                time.sleep(3)
+                time.sleep(INTERVAL)
 
 fileName='lastSeen.txt'
 def readLastSeen(fileName):
@@ -51,10 +51,10 @@ def reply():
                     api.create_favorite(tweet.id)
                     api.retweet(tweet.id)
                     storeLastSeen(fileName,tweet.id)
-                    time.sleep(10)
+                    time.sleep(INTERVAL)
                 except tweepy.TweepError as err:
                     print(err.reason)
-                    time.sleep(3)
+                    time.sleep(INTERVAL)
                 except StopIteration:
                     break 
 
@@ -65,18 +65,18 @@ def searchBot():
             tweet.retweet()
             print("Retweeted!")
             api.create_favorite(tweet.id)
-            time.sleep(10)
+            time.sleep(INTERVAL)
         except tweepy.TweepError as err:
             print(err.reason)
-            time.sleep(3)
+            time.sleep(INTERVAL)
         except StopIteration:
             break
 
 while True:
     followingFollowers()
-    time.sleep(15)
+    time.sleep(INTERVAL)
     reply()
-    time.sleep(15)
+    time.sleep(INTERVAL)
     searchBot()
-    time.sleep(15)
+    time.sleep(INTERVAL)
     time.sleep(INTERVAL)
